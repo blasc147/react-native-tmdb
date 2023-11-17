@@ -1,0 +1,44 @@
+import React from 'react'
+import { NavigationContainer } from '@react-navigation/native'
+import { createNativeStackNavigator } from '@react-navigation/native-stack'
+import HomeScreen from '../screens/HomeScreen'
+import MovieDetailScreen from '../screens/MovieDetailScreen'
+import ActorScreen from '../screens/ActorScreen'
+import SearchScreen from '../screens/SearchScreen'
+import RatedMoviesScreen from '../screens/RatedMoviesScreen'
+
+const Stack = createNativeStackNavigator()
+
+export default function AppNavigation() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator>
+        <Stack.Screen
+          name='Home'
+          options={{ headerShown: false }}
+          component={HomeScreen}
+        />
+        <Stack.Screen
+          name='MovieDetail'
+          options={{ headerShown: false }}
+          component={MovieDetailScreen}
+        />
+        <Stack.Screen
+          name='RatedMovies'
+          options={{ headerShown: false }}
+          component={RatedMoviesScreen}
+        />
+        <Stack.Screen
+          name='Actor'
+          options={{ headerShown: false }}
+          component={ActorScreen}
+        />
+        <Stack.Screen
+          name='Search'
+          options={{ headerShown: false }}
+          component={SearchScreen}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
+  )
+}
